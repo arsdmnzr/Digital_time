@@ -1,21 +1,20 @@
-import React,{useState} from 'react';
+import React, { useState } from 'react'
 import './App.css'
 
-const App=()=>{
-  const time = new Date().toLocaleString();
+function App() {
+  let time = new Date().toLocaleString();
+  const [digit, setDigit] = useState(time);
 
-  const [ime,setIme] = useState(time);
-const tame=()=>{
-  const time = new Date().toLocaleTimeString();
-  return setIme(time);
-}
-setInterval(tame,1000);
+  function got()
+   {setInterval(()=>{
+  let time = new Date().toLocaleString();
+
+    setDigit(time)
+  },1000);};
   return (
     <div className="container" >
-      <h1>{ime}</h1>
-      <div>
-      <button className="btn" onClick={tame} >Get Time</button>
-      </div>
+      <h1>{digit}</h1>
+      <button onClick={got}>Get Time</button>
     </div>
   )
 }
